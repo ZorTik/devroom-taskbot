@@ -1,0 +1,30 @@
+task:
+  created:
+    title: "Task {0} created!"
+    description: "Task has been created successfully and is available!"
+  replied:
+    title: "Replied to task {0}!"
+    description: "You have replied to task {0}! Thank you!"
+  notification:
+    title: "New Task"
+    description: "A new task has appeared!"
+    fields:
+      - name: "Task"
+        value: "{0}"
+      - name: "Description"
+        value: "{1}"
+    footer: "Complete it and get your reward!"
+  notification_reply:
+    title: "New Reply"
+    description: "A new reply has appeared!"
+    fields:
+      - name: "Task"
+        value: "{0}"
+      - name: "Reply"
+        value: "{1}"
+      - name: "User"
+        value: "{2}"
+    footer: "Approve or decline it!"
+  not_found:
+    title: "Task not found!"
+    description: "Task does not exist!"

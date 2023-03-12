@@ -1,0 +1,4 @@
+data_source:
+  type: "json"
+  options:
+    file: "data.json"
