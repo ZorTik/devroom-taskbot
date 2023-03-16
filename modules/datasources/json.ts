@@ -1,7 +1,7 @@
 import {DataSource} from "../../app/data/index.types";
 import {MayPromise} from "../../types";
 import * as fs from "fs";
-import {Task, TaskBotGuildRetrievableOptions, TaskBotGuildTaskReplies} from "../../app/bot2.types";
+import {Task, TaskBotGuildRetrievableOptions, TaskBotGuildTaskReplies} from "../../app/bot.types";
 
 const source: DataSource = {
     id: "json",

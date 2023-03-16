@@ -23,7 +23,7 @@ async function runSetup<T>(subject: SetupSubject<T>,
         .setCustomId(uuid);
 
     const rows = Object.keys(subject).map((key) => {
-        const {prompt, style} = subject[key];
+        const {prompt, style} = (subject as any)[key];
 
         const inputBuilder = new TextInputBuilder()
             .setCustomId(key)
@@ -66,7 +66,7 @@ async function handleSetupResponse(interaction: ModalSubmitInteraction) {
         const subject = latch.subject;
         const result = {};
         for (let key of Object.keys(subject)) {
-            result[key] = interaction.fields.getTextInputValue(key);
+            (result as any)[key] = interaction.fields.getTextInputValue(key);
         }
         latch.resolve(result);
     }

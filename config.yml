@@ -1,3 +1,4 @@
+token: token
 data_source:
   type: "json"
   options:

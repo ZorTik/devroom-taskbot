@@ -1,4 +1,4 @@
-import {Task, TaskBotGuildRetrievableOptions, TaskBotGuildTaskReplies} from "../bot2.types";
+import {Task, TaskBotGuildRetrievableOptions, TaskBotGuildTaskReplies} from "../bot.types";
 import {MayPromise} from "../../types";
 
 type DataSource = {

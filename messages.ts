@@ -45,15 +45,15 @@ class Message {
             throw new Error(`No message found for path ${this.path}`);
     }
 
-    getAs<T>(type: MessageType | string): T {
+    getAs<T>(type: MessageType | string): T|undefined {
         const parser = parsers.get(type);
         if (!parser || !parser.canParse(config[this.path]))
-            return null;
+            return undefined;
 
         return <T>parser.parse(config[this.path], new MessageArgs(this.args));
     }
 
-    getAsEmbed(): EmbedBuilder {
+    getAsEmbed(): EmbedBuilder|undefined {
         return this.getAs(MessageType.EMBED);
     }
 
@@ -84,7 +84,7 @@ class EmbedMessageParser implements MessageParser {
             title: args.assign(section.title),
             description: args.assign(section.description ?? ""),
             color: section.color ?? 0x000000,
-            fields: section.fields?.map(field => {
+            fields: section.fields?.map((field: any) => {
                 return {
                     name: args.assign(field.name ?? ""),
                     value: args.assign(field.value ?? ""),
